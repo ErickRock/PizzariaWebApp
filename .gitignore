@@ -1,8 +1,8 @@
-# Created by https://www.toptal.com/developers/gitignore/api/csharp,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=csharp,visualstudiocode
+# Criado por https://www.toptal.com/developers/gitignore/api/csharp,visualstudiocode
+# Edite em https://www.toptal.com/developers/gitignore?templates=csharp,visualstudiocode
 
 ### CSharp ###
-# See https://aka.ms/terminal-dotfiles for more info
+# Veja https://aka.ms/terminal-dotfiles para mais informações
 *.swp
 *~.nib
 localhistory
@@ -12,7 +12,7 @@ localhistory
 *.ldf
 *.ndf
 
-# Visual Studio files
+# Arquivos do Visual Studio
 *.user
 *.aps
 *.ncb
@@ -22,7 +22,7 @@ localhistory
 *.bak.*
 *.sln.docstates
 
-# Build results
+# Resultados de compilação
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
@@ -35,25 +35,25 @@ bld/
 [Bb]in/
 [Oo]bj/
 
-# Visual C++ cache files
+# Arquivos de cache do Visual C++
 ipch/
 *.aps
 *.ncb
 *.opensdf
 *.sdf
 
-# Visual Studio profiler
+# Profiler do Visual Studio
 *.psess
 *.vsp
 
-# ReSharper is a .NET coding add-in
+# ReSharper é um add-in de codificação .NET
 _ReSharper*/
 *.[Rr]e[Ss]harper.user
 
-# TeamCity is a build add-in
+# TeamCity é um add-in de compilação
 _TeamCity*
 
-# DotCover is a Code Coverage Tool
+# DotCover é uma ferramenta de cobertura de código
 *.dotCover
 
 # NCrunch
@@ -67,10 +67,10 @@ AutoTest.Net/
 # Web workbench (sass)
 .sass-cache/
 
-# Installshield output folder
+# Pasta de saída do Installshield
 [Ee]xpress/
 
-# DocProject is a documentation generator add-in
+# DocProject é um add-in gerador de documentação
 DocProject/buildhelp/
 DocProject/Help/*.HxT
 DocProject/Help/*.HxC
@@ -78,25 +78,25 @@ DocProject/Help/*.hhc
 DocProject/Help/*.hhk
 DocProject/Help/*.hhp
 
-# Click-Once directory
+# Diretório Click-Once 
 publish/
 
-# Publish Web Output
+# Saída da publicação na Web 
 *.[Pp]ublish.xml
 
-# NuGet Packages Directory
-## TODO: If you have NuGet Package Restore enabled, uncomment the next line to exclude all NuGet packages from your repository.
-## See http://docs.nuget.org/docs/reference/package-restore.
+# Diretório de pacotes NuGet 
+## TODO: Se você tiver o NuGet Package Restore habilitado, descomente a próxima linha para excluir todos os pacotes NuGet do seu repositório.
+## Veja http://docs.nuget.org/docs/reference/package-restore.
 packages/
 
-# Windows Azure Build Output
+# Saída da compilação do Windows Azure 
 csx/
 *.build.csdef
 
-# Windows Store app package directory
+# Diretório de pacotes de aplicativos da Windows Store 
 AppPackages/
 
-# Others
+# Outros 
 sql/
 [Ss]tyle[Cc]op.*
 ~$*
@@ -111,7 +111,7 @@ sql/
 !.vscode/extensions.json
 
 ### VisualStudioCode Patch ###
-# Ignore all local history of files.
+# Ignore todo o histórico local dos arquivos.
 .history/
 
-# End of https://www.toptal.com/developers/gitignore/api/csharp,visualstudiocode.
+# Fim de https://www.toptal.com/developers/gitignore/api/csharp,visualstudiocode.
