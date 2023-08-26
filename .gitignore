@@ -1,0 +1,117 @@
+# Created by https://www.toptal.com/developers/gitignore/api/csharp,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=csharp,visualstudiocode
+
+### CSharp ###
+# See https://aka.ms/terminal-dotfiles for more info
+*.swp
+*~.nib
+localhistory
+*.bak
+*.tmp
+*.mdf
+*.ldf
+*.ndf
+
+# Visual Studio files
+*.user
+*.aps
+*.ncb
+*.tlh
+*.tlb
+*.suo
+*.bak.*
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Aa][Rr][Mm]64/
+bld/
+[Bb]in/
+[Oo]bj/
+
+# Visual C++ cache files
+ipch/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+
+# Visual Studio profiler
+*.psess
+*.vsp
+
+# ReSharper is a .NET coding add-in
+_ReSharper*/
+*.[Rr]e[Ss]harper.user
+
+# TeamCity is a build add-in
+_TeamCity*
+
+# DotCover is a Code Coverage Tool
+*.dotCover
+
+# NCrunch
+_NCrunch_*
+.*crunch*.local.xml
+
+# MightyMoose
+*.mm.*
+AutoTest.Net/
+
+# Web workbench (sass)
+.sass-cache/
+
+# Installshield output folder
+[Ee]xpress/
+
+# DocProject is a documentation generator add-in
+DocProject/buildhelp/
+DocProject/Help/*.HxT
+DocProject/Help/*.HxC
+DocProject/Help/*.hhc
+DocProject/Help/*.hhk
+DocProject/Help/*.hhp
+
+# Click-Once directory
+publish/
+
+# Publish Web Output
+*.[Pp]ublish.xml
+
+# NuGet Packages Directory
+## TODO: If you have NuGet Package Restore enabled, uncomment the next line to exclude all NuGet packages from your repository.
+## See http://docs.nuget.org/docs/reference/package-restore.
+packages/
+
+# Windows Azure Build Output
+csx/
+*.build.csdef
+
+# Windows Store app package directory
+AppPackages/
+
+# Others
+sql/
+[Ss]tyle[Cc]op.*
+~$*
+*~
+*.dbmdl
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files.
+.history/
+
+# End of https://www.toptal.com/developers/gitignore/api/csharp,visualstudiocode.
