@@ -8,21 +8,86 @@ using System.Threading.Tasks;
 
 namespace PizzariaWebApp.Controllers
 {
+
+    // Controller para gerenciar entidades Pizza
     [Route("api/[controller]")]
     [ApiController]
     public class PizzaController : ControllerBase
     {
-        private readonly AppDbContext _context;
 
-        public PizzaController(AppDbContext context)
+        // Repositório para acesso aos dados
+        private readonly IPizzaRepository _pizzaRepository;
+
+        // Injeção de dependência
+        public PizzaController(IPizzaRepository pizzaRepository)
         {
-            _context = context;
+            _pizzaRepository = pizzaRepository;
         }
 
+        // GET: Retorna todas as pizzas
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Pizza>>> GetPizzas()
         {
-            return await _context.Pizzas.ToListAsync();
+            var pizzas = await _pizzaRepository.GetAll();
+            return Ok(pizzas);
         }
+
+        // GET por ID:
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Pizza>> GetPizzaById(int id)
+        {
+            var pizza = await _pizzaRepository.GetById(id);
+
+            if (pizza == null)
+                return NotFound();
+
+            return pizza;
+        }
+
+        // POST: Adiciona uma nova pizza
+        [HttpPost]
+        public async Task<ActionResult<Pizza>> AddPizza(Pizza pizza)
+        {
+            await _pizzaRepository.Add(pizza);
+
+            return CreatedAtAction(nameof(GetPizza), new { id = pizza.Id }, pizza);
+        }
+
+        // PUT: Atualiza uma pizza
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdatePizza(int id, Pizza pizza)
+        {
+            var existingPizza = await _pizzaRepository.GetById(id);
+
+            if (existingPizza == null)
+                return NotFound();
+
+            existingPizza.Nome = pizza.Nome;
+            existingPizza.Ingredientes = pizza.Ingredientes;
+            existingPizza.Preco = pizza.Preco;
+
+            await _pizzaRepository.Update(existingPizza);
+
+            return NoContent();
+        }
+
+        // DELETE: Exclui uma pizza
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeletePizza(int id)
+        {
+            var pizza = await _pizzaRepository.GetById(id);
+
+            if (pizza == null)
+                return NotFound();
+
+            await _pizzaRepository.Delete(id);
+
+            return NoContent();
+        }
+
+    }
+
+    internal interface IPizzaRepository
+    {
     }
 }
