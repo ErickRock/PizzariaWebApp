@@ -15,5 +15,7 @@ namespace PizzariaWebApp.Models
 
         [Required]
         public string Telefone { get; set; }
+
+        public List<Pedido> Pedidos { get; set; }
     }
 }

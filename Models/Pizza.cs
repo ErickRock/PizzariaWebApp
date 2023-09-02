@@ -11,7 +11,7 @@ namespace PizzariaWebApp.Models
         public string Nome { get; set; }
 
         [Required]
-        public string Sabor { get; set; }
+        public string Descricao { get; set; }
 
         [Required]
         public decimal Preco { get; set; }

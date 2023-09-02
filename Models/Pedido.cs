@@ -17,5 +17,8 @@ namespace PizzariaWebApp.Models
 
         [Required]
         public decimal Total { get; set; }
+
+        [Required]
+        public string Status { get; set; }
     }
 }
