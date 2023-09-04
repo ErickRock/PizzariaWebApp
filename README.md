@@ -1,14 +1,46 @@
-# Executando o Projeto PizzariaWebApp
-
 Este projeto é uma aplicação ASP.NET Core que usa o Entity Framework Core para interagir com o banco de dados. Aqui estão as etapas para instalar as ferramentas necessárias e executar o projeto em sua máquina local.
 
-## Pré-requisitos
+## 📝 Sumário
 
-1. [.NET Core SDK](https://dotnet.microsoft.com/download)
-2. [Visual Studio](https://visualstudio.microsoft.com/downloads/) ou [Visual Studio Code](https://code.visualstudio.com/download) (com a extensão C# instalada)
-3. [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) (Opcional, se você planeja usar um banco de dados SQL Server local)
+- [📝 Sumário](#-sumário)
+- [🚀 Pré-requisitos](#-pré-requisitos)
+- [⚙️ Configuração do Ambiente](#️-configuração-do-ambiente)
+  - [🖥️ Windows 11 (utilizando winget)](#️-windows-11-utilizando-winget)
+  - [🐧 Linux (baseado no Debian)](#-linux-baseado-no-debian)
+- [🔧 Passos para Executar o Projeto](#-passos-para-executar-o-projeto)
 
-## Passos para Executar o Projeto
+## 🚀 Pré-requisitos
+
+1. 🌐 [.NET Core SDK](https://dotnet.microsoft.com/download)
+2. 💻 [Visual Studio](https://visualstudio.microsoft.com/downloads/) ou [Visual Studio Code](https://code.visualstudio.com/download) (com a extensão C# instalada)
+3. 🗄️ [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) (Opcional, se você planeja usar um banco de dados SQL Server local)
+
+## ⚙️ Configuração do Ambiente
+
+### 🖥️ Windows 11 (utilizando winget)
+
+1. Instale o [Windows Package Manager (winget)](https://docs.microsoft.com/en-us/windows/package-manager/winget/)
+
+2. Abra o Prompt de Comando ou o PowerShell e execute o seguinte comando para instalar o .NET Core SDK:
+
+   ```pwsh
+   winget install -e --id=Microsoft.DotNet.SDK.7
+   ```
+
+### 🐧 Linux (baseado no Debian)
+
+1. Abra o Terminal e execute os seguintes comandos para instalar o .NET Core SDK:
+
+   ```bash
+   wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+   sudo dpkg -i packages-microsoft-prod.deb
+   sudo apt-get update
+   sudo apt-get install -y apt-transport-https
+   sudo apt-get update
+   sudo apt-get install -y dotnet-sdk-7.0
+   ```
+
+## 🔧 Passos para Executar o Projeto
 
 1. **Clone o Repositório**: Clone o repositório do projeto em sua máquina local usando o comando git abaixo:
 
