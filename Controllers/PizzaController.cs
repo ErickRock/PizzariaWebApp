@@ -17,7 +17,7 @@ namespace PizzariaWebApp.Controllers
         private readonly IPizzaRepository _pizzaRepository;
 
         // Injeção de dependência
-        internal PizzaController(IPizzaRepository pizzaRepository)
+        public PizzaController(IPizzaRepository pizzaRepository)
         {
             _pizzaRepository = pizzaRepository;
         }
@@ -84,8 +84,12 @@ namespace PizzariaWebApp.Controllers
         }
     }
 
-    internal interface IPizzaRepository
+    public interface IPizzaRepository
     {
-         Task<Pizza> GetById(int id);
+        Task<IEnumerable<Pizza>> GetAll();
+        Task<Pizza> GetById(int id);
+        Task Add(Pizza pizza);
+        Task Update(Pizza pizza);
+        Task Delete(int id);
     }
 }

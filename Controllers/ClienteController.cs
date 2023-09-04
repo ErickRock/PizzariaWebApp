@@ -20,11 +20,15 @@ namespace PizzariaWebApp.Controllers
       _context = context;
     }
 
-    // GET: Retorna todos os clientes
-    [HttpGet]
-    public async Task<ActionResult<IEnumerable<Cliente>>> GetClientes()
+    // GET: Retorna um cliente específico pelo ID
+    [HttpGet("{id}")]
+    public async Task<ActionResult<Cliente>> GetCliente(int id)
     {
-      return await _context.Clientes.ToListAsync();
+      var cliente = await _context.Clientes.FindAsync(id);
+      if (cliente == null)
+        return NotFound();
+
+      return cliente;
     }
 
     // POST: Adiciona um novo cliente
