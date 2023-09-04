@@ -1,4 +1,11 @@
+
+
 Este projeto é uma aplicação ASP.NET Core que usa o Entity Framework Core para interagir com o banco de dados. Aqui estão as etapas para instalar as ferramentas necessárias e executar o projeto em sua máquina local.
+
+[![Build and Test](https://github.com/ErickRock/PizzariaWebApp/actions/workflows/dotnet.yml/badge.svg)](https://github.com/ErickRock/PizzariaWebApp/actions/workflows/dotnet.yml)
+ [![LinkedIn](https://img.shields.io/badge/LinkedIn-Perfil-blue)](https://www.linkedin.com/in/erickgarciagodoy/)
+ [![Instagram](https://img.shields.io/badge/Instagram-Perfil-red)](https://www.instagram.com/garciiaerick/)
+ [![Twitter](https://img.shields.io/badge/Twitter-Perfil-blue)](https://twitter.com/garciaeriickk)
 
 ## 📝 Sumário
 
