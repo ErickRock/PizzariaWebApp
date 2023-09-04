@@ -1,0 +1,81 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '7.0.x'
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Restore NuGet packages
+        run: dotnet restore
+        # Adicione aqui um passo para armazenar em cache os pacotes NuGet restaurados
+        - name: Cache NuGet packages
+          uses: actions/cache@v2
+          with:
+            path: ~/.nuget/packages
+            key: ${{ runner.os }}-nuget-${{ hashFiles('**/*.csproj') }}
+            restore-keys: |
+              ${{ runner.os }}-nuget-
+
+      - name: Build project
+        run: dotnet build --configuration Release
+        # Adicione aqui um passo para executar análise estática de código
+        - name: Run code analysis
+          uses: sonarsource/sonarcloud-github-action@master
+          env:
+            SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+      - name: Run tests
+        run: dotnet test --configuration Release --no-restore
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '7.0.x'
+
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Publish project
+        run: dotnet publish --configuration Release --output ./publish
+
+      - name: Deploy to server
+        # Adicione aqui os passos específicos para realizar o deploy para o servidor
+        - name: Deploy to production
+          uses: some-deployment-action@v1
+          with:
+            server: production
+            username: ${{ secrets.DEPLOY_USERNAME }}
+            password: ${{ secrets.DEPLOY_PASSWORD }}
+
+      # Adicione aqui um passo para configurar notificações sobre o status do fluxo de trabalho
+      - name: Send status notification
+        uses: some-notification-action@v1
+        with:
+          status: ${{ job.status }}
+
+      # Utilize variáveis de ambiente para armazenar informações sensíveis e referenciá-las no fluxo de trabalho
+      env:
+        API_KEY: ${{ secrets.API_KEY }}
