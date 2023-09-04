@@ -14,6 +14,9 @@ namespace PizzariaWebApp.Models
         public string Descricao { get; set; }
 
         [Required]
+        public List<string> Ingredientes { get; set; }
+
+        [Required]
         public decimal Preco { get; set; }
     }
 }

@@ -8,18 +8,16 @@ using System.Threading.Tasks;
 
 namespace PizzariaWebApp.Controllers
 {
-
     // Controller para gerenciar entidades Pizza
     [Route("api/[controller]")]
     [ApiController]
     public class PizzaController : ControllerBase
     {
-
         // Repositório para acesso aos dados
         private readonly IPizzaRepository _pizzaRepository;
 
         // Injeção de dependência
-        public PizzaController(IPizzaRepository pizzaRepository)
+        internal PizzaController(IPizzaRepository pizzaRepository)
         {
             _pizzaRepository = pizzaRepository;
         }
@@ -50,7 +48,7 @@ namespace PizzariaWebApp.Controllers
         {
             await _pizzaRepository.Add(pizza);
 
-            return CreatedAtAction(nameof(GetPizza), new { id = pizza.Id }, pizza);
+            return CreatedAtAction(nameof(GetPizzaById), new { id = pizza.Id }, pizza);
         }
 
         // PUT: Atualiza uma pizza
@@ -84,10 +82,10 @@ namespace PizzariaWebApp.Controllers
 
             return NoContent();
         }
-
     }
 
     internal interface IPizzaRepository
     {
+         Task<Pizza> GetById(int id);
     }
 }
